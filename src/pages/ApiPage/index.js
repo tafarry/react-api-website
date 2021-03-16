@@ -7,18 +7,6 @@ import Footer from '../../components/Footer';
 
 import Endpoints from './Endpoints';
 
-const res = `{
-    "status": true,
-    "result_code": 200,
-    "message": "Success!",
-    "values": {
-      "name": "Kiddy",
-      "email": "kiddydhana@gmail.com",
-      "token": "9WUzKE7kCI1vSuQAbrmOwc2m2dk1NbPR",
-      "account_status": "1"
-      }
-    }`;
-
 export default function ApiPage(){ 
   const [activeEndpoint,setActiveEndpoint] = React.useState(Endpoints[0].endpoints[0]);
     return(

@@ -6,7 +6,7 @@ export default function Sidebar({endpoints,setActive}){
           <div className="sidebar-scroll">
             <nav>
               <ul className="nav">
-                <li><a href="#" className=""><i className="lnr lnr-home"/> <span>Dashboard</span></a></li>
+                <li><a href="/" className=""><i className="lnr lnr-home"/> <span>Dashboard</span></a></li>
                 {
                   endpoints.map((item,index)=>(
                     <li key={item.key}>
@@ -20,10 +20,10 @@ export default function Sidebar({endpoints,setActive}){
                           {
                             item.endpoints.map((endpoint,index)=>(
                               <li key={endpoint.key}>
-                                <a href={'#'} onClick={(e)=>{e.preventDefault();setActive(endpoint)}} className="">
+                                <a href={'#'+endpoint.name} onClick={(e)=>{e.preventDefault();setActive(endpoint)}} className="">
                                   {endpoint.name} &nbsp; 
                                   <span 
-                                    className={"label "+(endpoint.method=='GET'?'label-success':endpoint.method=='POST'?'label-primary':endpoint.method=='PUT'?'label-warning':'label-danger')}
+                                    className={"label "+(endpoint.method==='GET'?'label-success':endpoint.method==='POST'?'label-primary':endpoint.method==='PUT'?'label-warning':'label-danger')}
                                   >
                                     {endpoint.method}
                                   </span>
